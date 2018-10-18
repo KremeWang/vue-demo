@@ -19,12 +19,13 @@
 
 
 <script>
+// 1. 导入 评论子组件
 import comment from "../subComponents/comment.vue";
 
 export default {
   data() {
     return {
-      id: this.$route.params.id,
+      id: this.$route.params.id, // 将 URL 地址中传递过来的 Id值，挂载到 data上，方便以后调用
       newsinfo: {} // 新闻对象
     };
   },
@@ -44,12 +45,13 @@ export default {
     }
   },
   components: {
-    "comment-box": comment,
+    // 用来注册子组件的节点
+    "comment-box": comment
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .newsinfo-container {
   padding: 0 4px;
   .title {

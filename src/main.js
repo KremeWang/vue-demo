@@ -15,6 +15,7 @@ import './assets/mui/css/icons-extra.css'
 
 Vue.config.productionTip = false
 Vue.http.options.root = "http://027xin.com:8899"
+Vue.http.options.emulateJSON = true;
 
 // 导入时间格式化组件库moment
 import moment from 'moment'
