@@ -8,8 +8,11 @@ import HomePage from '@/components/tabbar/HomePage.vue'
 import members from '@/components/tabbar/members.vue'
 import shopCar from '@/components/tabbar/shopCar.vue'
 import search from '@/components/tabbar/search.vue'
+import news from '@/components/news/news.vue'
+import VueResource from 'vue-resource'
 
 Vue.use(Router)
+Vue.use(VueResource)
 
 export default new Router({
   routes: [
@@ -17,6 +20,7 @@ export default new Router({
     { path: '/member', component: members },
     { path: '/shopCar', component: shopCar },
     { path: '/search', component: search },
+    { path: '/home/news', component: news },
     { path: '*', redirect: '/home' }
   ],
   linkActiveClass: 'mui-active'
