@@ -9,6 +9,7 @@ import members from '@/components/tabbar/members.vue'
 import shopCar from '@/components/tabbar/shopCar.vue'
 import search from '@/components/tabbar/search.vue'
 import news from '@/components/news/news.vue'
+import newsInfo from '@/components/news/newsInfo.vue'
 import VueResource from 'vue-resource'
 
 Vue.use(Router)
@@ -21,6 +22,7 @@ export default new Router({
     { path: '/shopCar', component: shopCar },
     { path: '/search', component: search },
     { path: '/home/news', component: news },
+    { path: '/home/newsInfo/:id', component: newsInfo },
     { path: '*', redirect: '/home' }
   ],
   linkActiveClass: 'mui-active'

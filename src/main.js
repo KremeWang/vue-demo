@@ -14,6 +14,14 @@ import './assets/mui/css/mui.min.css'
 import './assets/mui/css/icons-extra.css'
 
 Vue.config.productionTip = false
+Vue.http.options.root = "http://027xin.com:8899"
+
+// 导入时间格式化组件库moment
+import moment from 'moment'
+// 定义时间格式化全局过滤器
+Vue.filter('dateFormat', function (dateStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+  return moment(dateStr).format(pattern)
+})
 
 /* eslint-disable no-new */
 new Vue({
