@@ -11,6 +11,7 @@ Vue.use(MintUI)
 
 //在vue项目中引入 mui 
 import './assets/mui/css/mui.min.css'
+import './assets/mui/css/icons-extra.css'
 
 Vue.config.productionTip = false
 

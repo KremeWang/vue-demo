@@ -1,16 +1,38 @@
 <template>
-  <div id="app">
-    <mt-spinner type="snake"></mt-spinner>
-    <mt-spinner type="double-bounce"></mt-spinner>
-    <mt-spinner type="triple-bounce"></mt-spinner>
-    <mt-spinner type="fading-circle"></mt-spinner>
+  <div class="app-container">
 
-    <!-- 或者接受传入类型的序号 -->
-    <mt-spinner :type="0"></mt-spinner>
-    <mt-spinner :type="1"></mt-spinner>
-    <mt-spinner :type="2"></mt-spinner>
-    <mt-spinner :type="3"></mt-spinner>
+    <!-- 顶部 Header 区域 -->
+    <mt-header fixed title="Demo·Vue项目"></mt-header>
+
+    <!-- 中间的 路由 router-view 区域 -->
+		<transition>
+      <router-view></router-view>
+    </transition>
+
+    <!-- 底部 Tabbar 区域 -->
+    <nav class="mui-bar mui-bar-tab">
+			<router-link class="mui-tab-item" to="/home">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="/member">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">会员</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="/shopCar">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart">
+					<span class="mui-badge">0</span>
+				</span>
+				<span class="mui-tab-label">购物车</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="/search">
+				<span class="mui-icon mui-icon-search"></span>
+				<span class="mui-tab-label">搜索</span>
+			</router-link>
+		</nav>
+
   </div>
+  
 </template>
 
 <script>
@@ -19,6 +41,26 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.app-container {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
 
+.v-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
+}
 </style>
