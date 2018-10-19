@@ -10,6 +10,10 @@ import shopCar from '@/components/tabbar/shopCar.vue'
 import search from '@/components/tabbar/search.vue'
 import news from '@/components/news/news.vue'
 import newsInfo from '@/components/news/newsInfo.vue'
+import photoList from '@/components/photos/photoList.vue'
+import photoInfo from '@/components/photos/photoInfo.vue'
+import GoodsList from '@/components/goods/goodsList.vue'
+import GoodsInfo from '@/components/goods/goodsInfo.vue'
 import VueResource from 'vue-resource'
 
 Vue.use(Router)
@@ -23,6 +27,10 @@ export default new Router({
     { path: '/search', component: search },
     { path: '/home/news', component: news },
     { path: '/home/newsInfo/:id', component: newsInfo },
+    { path: '/home/photoList', component: photoList },
+    { path: '/home/photoinfo/:id', component: photoInfo },
+    { path: '/home/goodslist', component: GoodsList },
+    { path: '/home/goodsinfo', component: GoodsInfo },
     { path: '*', redirect: '/home' }
   ],
   linkActiveClass: 'mui-active'

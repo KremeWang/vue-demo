@@ -12,6 +12,12 @@ Vue.use(MintUI)
 //在vue项目中引入 mui 
 import './assets/mui/css/mui.min.css'
 import './assets/mui/css/icons-extra.css'
+// import './assets/mui/js/mui.min.js'
+// Vue.prototype.mui = mui
+
+//在项目中引用vue-preview 插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 Vue.config.productionTip = false
 Vue.http.options.root = "http://027xin.com:8899"
