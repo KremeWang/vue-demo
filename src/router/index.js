@@ -13,7 +13,10 @@ import newsInfo from '@/components/news/newsInfo.vue'
 import photoList from '@/components/photos/photoList.vue'
 import photoInfo from '@/components/photos/photoInfo.vue'
 import GoodsList from '@/components/goods/goodsList.vue'
-import GoodsInfo from '@/components/goods/goodsInfo.vue'
+import goodsinfo from '@/components/goods/goodsInfo.vue'
+import GoodsDesc from '@/components/goods/GoodsDesc.vue'
+import GoodsComment from '@/components/goods/GoodsComment.vue'
+
 import VueResource from 'vue-resource'
 
 Vue.use(Router)
@@ -30,7 +33,9 @@ export default new Router({
     { path: '/home/photoList', component: photoList },
     { path: '/home/photoinfo/:id', component: photoInfo },
     { path: '/home/goodslist', component: GoodsList },
-    { path: '/home/goodsinfo', component: GoodsInfo },
+    { path: '/home/goodsinfo/:id', component: goodsinfo },
+    { path: '/goods/goodsdesc/:id', component: GoodsDesc, name: 'goodsdesc' },
+    { path: '/goods/goodscomment/:id', component: GoodsComment, name: 'goodscomment' },
     { path: '*', redirect: '/home' }
   ],
   linkActiveClass: 'mui-active'

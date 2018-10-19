@@ -29,7 +29,7 @@
 
 <script>
 // 1. 导入 mui 的js文件
-// import mui from "../../lib/mui/js/mui.min.js";
+// import mui from "../../assets/mui/js/mui.min.js";
 
 export default {
   data() {
@@ -40,6 +40,7 @@ export default {
   },
   created() {
     this.getAllCategory();
+    // 默认进入页面，就主动请求 所有图片列表的数据
     this.getPhotoListByCateId(0);
   },
   mounted() {
@@ -49,14 +50,17 @@ export default {
   },
   methods: {
     getAllCategory() {
+      // 获取所有的图片分类
       this.$http.get("api/getimgcategory").then(result => {
         if (result.body.status === 0) {
+          // 手动拼接出一个最完整的 分类列表
           result.body.message.unshift({ title: "全部", id: 0 });
           this.cates = result.body.message;
         }
       });
     },
     getPhotoListByCateId(cateId) {
+      // 根据 分类Id，获取图片列表
       this.$http.get("api/getimages/" + cateId).then(result => {
         if (result.body.status === 0) {
           this.list = result.body.message;

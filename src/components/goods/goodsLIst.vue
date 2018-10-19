@@ -2,20 +2,20 @@
     <div>
         <mt-loadmore :autoFill='false' :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
     <div class="goods-list">
-        <div class="goods-item" v-for="(item,index) in goodslist" :key="index" @click="goDetail(item.id)">
-            <img :src="item.img_url" alt="">
-            <h1 class="title">{{ item.title }}</h1>
-            <div class="info">
-                <p class="price">
-                    <span class="now">￥{{ item.sell_price }}</span>
-                    <span class="old">￥{{ item.market_price }}</span>
-                </p>
-                <p class="sell">
-                    <span>热卖中</span>
-                    <span>剩{{ item.stock_quantity }}件</span>
-                </p>
-            </div>
-        </div>
+        <router-link class="goods-item" v-for="item in goodslist" :key="item.id" :to="'/home/goodsinfo/' + item.id" tag="div">
+      <img :src="item.img_url" alt="">
+      <h1 class="title">{{ item.title }}</h1>
+      <div class="info">
+        <p class="price">
+          <span class="now">￥{{ item.sell_price }}</span>
+          <span class="old">￥{{ item.market_price }}</span>
+        </p>
+        <p class="sell">
+          <span>热卖中</span>
+          <span>剩{{ item.stock_quantity }}件</span>
+        </p>
+      </div>
+    </router-link>
     </div>
 </mt-loadmore>
     </div>
